@@ -1,20 +1,17 @@
 package org.launchcode.hellospring.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Chris Bay
  */
 @Controller
 public class HelloController {
-
-    //    // Handle request at path /hello
-//    @GetMapping("hello")
-//    @ResponseBody
-//    public String hello() {
-//        return "Hello, Spring!";
-//    }
 
     @GetMapping("goodbye")
     @ResponseBody
@@ -36,18 +33,10 @@ public class HelloController {
         return "Hello, " + name + "!";
     }
 
-
+    // /hello/form
     @GetMapping("form")
-    @ResponseBody
     public String helloForm() {
-        return "<html>" +
-                "<body>" +
-                "<form action = 'hello' method = 'post'>" + // submit a request to /hello
-                "<input type = 'text' name = 'name' >" +
-                "<input type = 'submit' value = 'Greet Me!' >" +
-                "</form>" +
-                "</body>" +
-                "</html>";
+       return "form";
     }
 
 }
